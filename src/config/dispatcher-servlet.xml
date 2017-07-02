@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+       xmlns:mvc="http://www.springframework.org/schema/mvc">
+    <!--
+        非注解处理器映射器
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+        非注解处理器适配器
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+    -->
+    <!--
+         注解处理器映射器
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>
+    注解处理器映射器
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>
+    -->
+    <!--    <mvc:annotation-driven></mvc:annotation-driven>-->
+    <context:component-scan base-package="cn.itcast.springmvc.controller"></context:component-scan>
+
+
+    <!--视图解析器-->
+    <!-- ViewResolver -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <!--处理器配置-->
+    <!--<bean name="/items1.action" id="itemList1" class="cn.itcast.springmvc.controller.ItemList1"/>-->
+</beans>
